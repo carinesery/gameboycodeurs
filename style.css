@@ -1,0 +1,650 @@
+@font-face {
+    font-family: "Early GameBoy";
+    src: url('fonts/early-gameboy.ttf') format(truetype);
+  }
+
+@font-face {
+    font-family: Nintendo;
+    src: url(fonts/nintendo.otf) format(OpenType);
+}
+
+@font-face {
+    font-family: "Futura Bold";
+    src: url(fonts/futura-bold.otf) format(OpenType);
+}
+
+@font-face {
+    font-family: "Paymon";
+    src: url(fonts/paymon.otf) format(OpenType);
+}
+
+@font-face {
+    font-family: Retrogaming;
+    src: url('fonts/retrogaming.ttf') format(truetype);
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    background: linear-gradient(teal, #000a42);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+header, footer {
+    height: 80px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; 
+    background: linear-gradient(135deg, #ffffff 0% 40%, #000000 40% 100%);
+}
+
+footer {
+    background: linear-gradient(135deg, #000000 0% 40%, #ffffff 40% 100%);
+}
+
+header img {
+    width: 40px;
+    background-color: white;
+    border-radius: 100%;
+    height: auto;
+    border: 7px outset teal;
+}
+
+.logo-nom { 
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 35%;
+    padding-left: 30px;
+}
+
+.logo-nom a { 
+    display: flex;
+    height: inherit;
+    justify-content: flex-start ;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+}
+
+#title-header {
+    color: black;
+    font-size: 22px;
+    display: block;
+    font-family: "Early GameBoy", sans-serif;
+}
+
+nav, .nav {
+    display: flex;
+    font-family: "Early GameBoy", sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+nav {
+    justify-content: flex-end;
+    padding-right: 30px;
+}
+
+.nav { /* ul de la navigation */
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 30px;
+    gap: 5em;
+}
+
+nav a, nav li {
+    color: #ffffff;
+    transition: color .4s;
+    padding-bottom: 4px;
+}
+
+nav li:hover, nav a:hover {
+    color: teal;
+    transform: scale(1.1);
+}
+
+.active {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: white;
+    text-underline-offset: 8px;
+}
+
+.designs {
+    position: relative;
+    z-index: 1;
+}
+
+.menu-deroulant {
+    display: none;
+    position: absolute;
+    left: -2.2em;
+    background-color: #000000;
+    padding: 1em 2em;
+}
+
+.menu-deroulant li {
+    font-size: 10px;
+    margin: 1em 0;
+    text-align: center;
+}
+
+.designs:hover > .menu-deroulant { /* Parent > enfant = "si le deuxième élément est un enfant du premier, alors il adoptera les propriétés suivantes : */
+    display: block;
+   
+}
+
+#titre-principal-accueil {
+    color: #ffffff;
+    font-family: 'Futura Bold', sans-serif;
+    font-size: 40px;
+    letter-spacing: .05em;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    width: 60%;
+    margin: auto;
+}
+
+.consoles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    flex-wrap: wrap;
+    font-family: Inter, sans-serif;
+    margin-bottom: 50px;
+}
+
+.game-boy {
+    width: 300px;
+    height: 500px;
+    background-color: purple;
+    border-radius: 10px 10px 20px 20px;
+    margin: 50px;
+    box-shadow: 6px 6px 9px 6px black;
+    position: relative;
+    transition: transform 2.1s;
+}
+
+.game-boy.classe {
+    background-color: #211f1f;
+}
+
+.game-boy.fun {
+    background-color: #041cd7;
+}
+
+.game-boy:hover {
+    transform: scale(1.15);
+}
+
+.tour-ecran {
+    width: 260px;
+    height: 200px;
+    background-color: black;
+    margin: 15px auto 0;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.titre-secondaire-accueil {
+    text-transform: uppercase;
+    color: grey;
+    width: 100%; 
+    font-size: 14px;
+    padding: 5px 0;
+    text-align: center;
+    margin-bottom: 5px;
+    font-family: "Futura Bold", sans-serif;
+    font-weight: bolder;
+}
+
+.l1, .l2, .l3, .l4, .l5, .l6, .l7, .l8, .l9 {
+    display: inline-block;
+    font-style: normal;
+    font-family: Paymon, sans-serif;
+    letter-spacing: 1px;
+}
+
+.l1, .l6  {
+    color:  #b80a41;
+}    
+
+.l2, .l7 {
+    color: #4e4ba8; 
+    transform: rotate(-10deg);
+}
+
+.l3 {
+    color: #6eb122;
+}
+
+.l4, .l8 {
+    color: #daac06; 
+    transform: rotate(-10deg);
+}
+
+.l5, .l9 {
+    color: #00938a; 
+}
+
+
+.ecran {
+    width: 180px;
+    height: 160px;
+    background-color: rgb(31, 30, 30);
+    border-top: 25px solid black;
+    border-right: 40px solid black;
+    border-left: 40px solid black;
+    border-bottom: 5px solid black;
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}  
+
+.ecran p {
+    font-family: "Early GameBoy", sans-serif;
+    text-align: center;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.indication {
+    display: inline-block;
+    animation: apparait 2s infinite;
+}
+
+@keyframes apparait {
+    0%{
+        text-shadow: 0 0 white;
+    }
+
+    50%{
+        text-shadow: 0px 2px 7px yellow; 
+    }
+
+    100%{
+        text-shadow: 0 0 white;
+    }
+}
+
+.marque {
+    display: block;
+    font-family: Nintendo, sans-serif;
+    color: rgba(255, 255, 255, 0.3);
+    width: 50%;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    margin: 15px auto 0;
+    font-size: 9px;
+}
+
+.touches {
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.fond-croix {
+    background-color: grey;
+    width: 60px;
+    height: 60px;
+    margin-left: 35px;
+}
+.croix {
+    display: grid;
+    grid-template-rows: 20px 20px;
+    grid-template-columns: 20px 20px;
+    gap: 20px;
+}
+
+.cube {
+    background-color: purple;
+    position: relative;
+}
+
+.classe .cube {
+    background-color: #211f1f;
+}
+
+.fun .cube {
+    background-color: #041cd7;
+}
+
+.cube.top-left::before {
+    content: ''; 
+    width: 14px;
+    height: 14px;
+    background-color: #716e6e;
+    border-radius: 100%;
+    position: absolute;
+    right: -17px;
+    top: 24px;
+}
+
+.cube.top-left::after {
+    content: '';
+    border-bottom: 12px solid #716e6e;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    right: -16px;
+    top: 4px;
+}
+
+.cube.top-right::after {
+    content: '';
+    border-left: 12px solid #716e6e;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    position: absolute;
+    top: 24px;
+    right: 4px;
+}
+
+.cube.bottom-left::after {
+    content: '';
+    border-top: 12px solid #716e6e;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    position: absolute;
+    left: -16px;
+    top: 4px;
+}
+
+.cube.bottom-right::after {
+    content: '';
+    border-right: 12px solid #716e6e;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    position: absolute;
+    bottom: 23px;
+    right: 4px;
+}
+
+.boutons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding-right: 35px;
+}
+
+.bouton-a {
+    display: block;
+    border: 18px solid black;
+    border-radius: 100%;
+    background-color: black;
+    position: relative;
+}
+
+.bouton-a:after {
+    content: 'A';
+    color: grey;
+    position: absolute;
+    top: -10px;
+    right: -6px;
+}
+
+.bouton-b {
+    display: block;
+    border: 18px solid black;
+    border-radius: 100%;
+    background-color: black;
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+}
+
+.bouton-b:after {
+    content: 'B';
+    color: grey;
+    position: absolute;
+    top: -10px;
+    right: -6px;
+}
+
+.boutons-select-start {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    margin: 55px 0 auto;
+    gap: 10px;
+}
+
+.action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bouton-ellipse {
+    display: block;
+    width: 30px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.titre-bouton {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 13px;
+    padding-top: 5px;
+}
+
+.action.start {
+    animation: go 2s infinite;
+}
+
+.game-boy.classe .action.start {
+    animation: go 2s paused;
+}
+
+.action.start .bouton-ellipse {
+    background-color: yellow;
+    transition: transform .2s;
+}
+
+.game-boy.classe .action.start .bouton-ellipse {
+    background-color: red;
+}
+
+.action.start .titre-bouton {
+    font-weight: bold;
+}
+
+
+@keyframes go {
+    0% {
+        transform: scale(.9);
+    }    
+
+    50% 
+    {
+        transform: scale(1.25);
+    }
+    
+    100% {
+        transform: scale(.9);
+    }
+}
+
+.action.start .bouton-ellipse:hover {
+    background-color: chartreuse;
+    box-shadow: 0px 0px 9px 3px chartreuse;
+}
+
+.game-boy.classe .action.start .bouton-ellipse:hover {
+    background-color: red;
+    box-shadow: 0px 0px 9px 3px red;
+}
+
+.enceinte {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 2px;
+    width: 80px;
+    aspect-ratio: 1/1;
+    border: 12px solid purple;
+    border-radius: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.classe .enceinte {
+    border-color: #211f1f;
+}
+
+.fun .enceinte {
+    border-color: #041cd7;
+}
+
+.trou {
+    width: 4px;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-color:  #716e6e;
+}
+
+footer, .pied-de-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mentions, .copyright {
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+}
+
+.mentions {
+    color: #ffffff;
+    margin-left: 30px;
+}
+
+.copyright img {
+    width: 12px;
+    margin-right: 5px;
+}
+
+.reseaux-sociaux {
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer img {
+    width: 30px;
+}
+
+img.twitter { 
+    width: 24px;
+}
+
+@media screen and (max-width: 780px) {
+    #title-header {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    
+   header, footer {
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    background-color: transparent;
+   }
+
+   .logo-nom {
+    background-color: #ffffff;
+    justify-content: center;
+    max-width: 100%;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    padding-left: 0;
+   }
+
+   header img {
+        width: 25px;
+   }
+
+   nav {
+    width: 100%;
+    background-color: #000000;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-right: 0;
+   }
+
+   .nav {
+    padding-right: 0;
+   }
+
+   #titre-principal-accueil {
+        font-size: 25px;
+   }
+
+   .consoles {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+   }
+
+   footer {
+    flex-direction: column-reverse;
+    align-items: center;
+    background: #ffffff;
+    color: #000000;
+    gap: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+   }
+
+   .mentions {
+    color: #000000;
+    margin-left: 0;
+    order: 1;
+   }
+
+   .reseaux-sociaux {
+    margin-right: 0;
+    order: 2;
+   }
+
+}

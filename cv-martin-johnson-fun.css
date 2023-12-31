@@ -1,0 +1,669 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    
+    background-color: grey;
+}
+
+.container {
+    font-family: Montserrat, sans-serif;
+    margin: auto;
+    border: 1px solid black;
+    background-image: url(images/fond-bleu.webp); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+li {
+    list-style: none;
+}
+
+.ligne, #header-cv {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 95%;
+    margin-bottom: 3em;
+}
+
+.expertise, .competence, .hobbies {
+    width: 50%;
+    margin: 0 5%;
+}
+
+#header-cv p, .formation, .experience, .langues {
+    width: 50%;
+    margin: 0 5%;
+}
+
+h1 {
+    font-weight: 500;
+    font-size: 3em;
+    margin-bottom: 14px;
+    padding-left: 20%;
+}
+
+.plus-visible {
+    font-weight: 600;
+}
+
+h3 {
+    text-transform: uppercase;
+    color: #1e53a4;
+    font-size: 1.3em;
+    font-weight: 800; 
+}
+
+/* ---------- Profil --------------*/
+
+#header-cv {
+    display: flex;
+    width: 95%;
+    padding: 4em 0 1em;
+    align-items: center;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: 1.8em;
+    width: 60%;
+    margin-top: 10%;
+    margin-left: 20%;
+}
+
+address {
+    font-weight: 200;
+    padding-left: 20%;
+}
+
+address a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    font-style: normal
+}
+
+address .adresse {
+    font-size: .8em;
+    line-height: 1.4em;
+    margin-bottom: 1em;
+}
+
+address .email, address .site {
+    font-size: .9em;
+    font-weight: 500;
+    margin-bottom: .6em;
+}
+
+.profil { 
+    position: absolute;
+    background-image: url(images/trapeze.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 50px;
+    top: 93%;
+    left: 33%;
+}
+
+.cadre {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 60% 40%;
+    width: 55%;
+    aspect-ratio: 1.8/1;
+    background-color: #0e2d69;
+    grid-template-areas: 
+      "portrait coordonnees"
+      "projet coordonnees";
+    border-image: url(images/cadre.svg) 1 20px; /* A travailler */
+    min-width: 600px;
+    min-height: 333px;
+    margin: 0 5%;
+    position: relative;
+}
+
+.portrait {
+  background-image: url(images/portrait-martin.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-area: portrait;
+}
+
+.projet {
+  background-color: black;
+  grid-area: projet;
+  color: white;
+}
+
+.coordonnees {
+  grid-area: coordonnees;
+  color: white;
+  margin: 8% 0;
+}
+
+.profil span {
+    display: block;
+    text-transform: uppercase;
+    color: #0e2d69; 
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 11px;
+}
+
+.joli-cadre {
+    position: absolute;
+    width: 100%;
+}
+
+#header-cv p {
+    color: #f0ebce;
+    line-height: 1.6em;
+    font-weight: 500;
+    margin: 0 5%;
+    min-width: 350px;
+}
+
+#header-cv span { 
+    font-weight: 800;
+}
+
+/*-------------- Expertises ----------*/
+.expertise {
+    align-items: center; 
+}
+
+.expertise-ensemble {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 1.8em auto 0;
+} 
+
+.expertise-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cercle-expertise {
+    width: 180px;
+    height: 180px;
+    border: 2px solid #ffffff;
+    border-radius: 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-color: rgba(128, 184, 214, .7)
+}
+
+.cercle-expertise.ampoule {
+    background-image: url(images/ampoule-2.svg);
+    background-position: right 50% top 40%;
+    background-size: 80px;
+    z-index: 1;
+}
+
+.cercle-expertise.crayon {
+    background-image: url(images/crayon-2.svg);
+    background-size: 40px;
+    margin-left: -52px;
+}
+
+.cercle-expertise.pinceau {
+    background-image: url(images/pinceau-2.svg);
+    background-size: 40px;
+    margin-left: -52px;
+}
+
+.petit-rond {
+    background-color: #c7ebfa;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    position: relative;
+    margin-top: -45px; /* Avec cette règle, seul le rond de l'ampoule est bien placé */
+    z-index: 2;
+}
+
+.pinceau + .petit-rond, .crayon + .petit-rond { /* Sélectionne le petit rond qui suit ces classes et uniquement ces deux-là */
+    margin-left: -3.7em;
+}
+
+.petit-rond::before { /* Correspond au trait */
+    content:'';
+    width: 2px;
+    height: 50px;
+    background-color: #c7ebfa;
+    position: absolute;
+    left: 6.5px;
+    top: 14px;
+}
+
+.expertise-detail .intitule { 
+    display: block;
+    letter-spacing: .1em;
+    font-weight: 600; 
+    font-size: 1.2em;
+    padding-top: 60px;
+    margin-left: -52px;
+    color: #ffffff;
+}
+
+.expertise-detail .ampoule ~ .intitule {
+    margin-left: 0;
+}
+
+/* --------------- Formation ---------------*/
+
+.formation ol {
+    font-weight: 300;
+    color: #ffffff;
+    padding-top: 1.1em;
+    width: fit-content;
+    margin: auto;
+ }
+
+ .formation span {
+    display: block;
+ }
+ 
+ .diplome, span.organisme { 
+    font-weight: 700;
+ }
+
+ .diplome {
+    color: #9fdef8;
+ }
+
+ .formation li {
+    padding-bottom: 1.4em;
+    line-height: 1.7em;
+ }
+
+
+.licence, .bts, .baccalaureat {
+    position: relative;
+}
+
+.licence::before, .licence::after, .bts::before, .bts::after, .baccalaureat::before, .baccalaureat::after {
+    content: '';
+    position: absolute;
+}
+
+.licence::before {
+    background-color: #0081c6; 
+    width: 1em;
+    height: 1em;
+    border-radius: 100%;
+    top: 2em;
+    left: -1.8em;
+}
+    
+ .licence::after {
+    top: 3.4em;
+    left: -1.35em;
+    border-left: .2em solid #0081c6; 
+    height: 4.7em;
+    border-radius: .1em;
+ }
+
+ .bts::before {
+    background-color: #006eb8; 
+    width: 1em;
+    height: 1em;
+    top: 2em;
+    left: -1.8em;
+ } 
+
+ .bts::after {
+    top: 3.4em;
+    left: -1.35em;
+    border-left: .2em solid #006eb8;
+    height: 4.7em;
+    border-radius: .1em;
+ }
+
+ .baccalaureat::before {
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-right : 0.57em solid transparent;
+    border-bottom : 1em solid #1e53a4;
+    border-left : 0.57em solid transparent;
+    top: 2em;
+    left: -1.8em;
+} 
+
+ .baccalaureat::after {
+    top: 3.6em;
+    left: -1.35em;
+    border-left: .2em solid  #1e53a4;
+    height: 1.8em;
+    border-radius: .1em;
+ }
+
+
+ /* ----------- Compétences -----------*/
+
+.competence ul {
+    width: fit-content;
+    margin: 1.8em auto 0;
+}
+
+.competence li { 
+    display: flex;
+    margin-bottom: 1em;
+    line-height: 1.3em;
+}
+
+.competence li > span { 
+    display: block; 
+    width: 40%;
+    font-weight: 700;
+    margin-right: 10%;
+}
+
+.niveau {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+
+.niveau .rond {
+    width: .9em;
+    height: .9em;
+    border-radius: 100%;
+    background-color: #1e53a4;
+    border: .1em solid #ffffff;
+}
+
+.niveau .rond.gris {
+    background-color: #575b57;
+}
+
+#modelisation {
+    align-items: flex-start;
+}
+
+#modelisation div {
+    padding-top: 0.1em;
+}
+
+/* ---------------- Expérience --------------- */
+
+.experience { 
+    font-weight: 300;
+    
+}
+
+.experience ol {
+    width: fit-content;
+    margin: auto;
+}
+
+.experience li {
+    margin-top: 1.8em;
+}
+
+.experience span {
+    display: block;
+    margin-left: 4.5em;
+    line-height: 1.4em;
+}
+
+.experience .nombre { 
+    display: block;
+    font-size: 6em;
+    font-weight: 400;
+    color: #9fdef8;
+    float: left;
+    line-height: .85em;
+    margin-left: 0;
+    margin-bottom: 0.25em; 
+}
+
+.experience .organisme { 
+    font-weight: 700;
+}
+
+#webagency {
+    clear: left;
+}
+
+/* ---------- Hobbies --------------*/
+
+.hobbies-ligne {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1em;
+}
+
+.icone-hobbies {
+    display: inline-block;
+    width: 2.6em;
+    height: auto;
+}
+
+#manette {
+    display: inline-block;
+    width: 3.5em;
+    padding-bottom: 0.2em;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 7em;
+    height: 7em;
+    margin-top: 10px;
+}
+
+figcaption { 
+    padding-top: .8em;
+    font-size: .9em;
+    font-weight: 700;
+}
+
+/* ----------- Langues --------------*/ 
+
+.cibles {
+    display: flex;
+    gap: 25px;
+    margin-top: 2em;
+    margin-bottom: 4em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.quarter {
+    width: 4em;
+    height: 4em;
+    opacity: .6;
+    position: relative;
+    overflow: hidden;
+}
+
+.quarter.one:before, .quarter.two:before, .quarter.three:before, .quarter.four:before {
+    content: '';
+    width: 8.4em;
+    height: 8.4em;
+    background: radial-gradient(circle at center, transparent 0% 32%, #9fdef8 33% 100%);
+    position: absolute;
+   
+}
+
+.quater.one:before {
+    top: 0;
+    left: 0;
+}
+
+.quarter.two:before {
+    top: 0;
+    right: 0;
+}
+
+.quarter.three:before {
+    bottom: 0;
+    left: 0;
+}
+
+.quarter.four:before {
+    bottom: 0;
+    right: 0;
+}
+
+.quarter.one.gris:before {
+    background: radial-gradient(circle at center, transparent 0% 32%, #B5B5AC 33% 100%);
+}
+
+.quarter.three.gris:before {
+    background: radial-gradient(circle at center, transparent 0% 32%, #B5B5AC 33% 100%);
+} 
+
+.cercle-langue {
+    display: grid ;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: .4em;
+    width: 8.4em;
+    height: auto;
+    background-color: transparent;
+    outline-offset: .4em;
+    outline: .2em solid white;
+    border-radius: 100%;
+    overflow: hidden;
+    position: relative;
+    transform: scale(.8);
+}
+
+.center {
+    width: 3em;
+    height: 3em;
+    background-color: transparent;
+    border: 0.1em solid transparent;
+    border-radius: 100%;
+    position: absolute; /* postulat de départ */
+    top: 50%; left: 50%; /* à 50%/50% du parent référent */
+    transform: translate(-50%, -50%); /* décalage de 50% de sa propre taille */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center span { 
+    text-transform: uppercase; 
+    font-weight: 700; 
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 1135px) {
+    #header-cv {
+        flex-direction: column;
+        gap: 4em;
+    }
+    
+}
+
+@media screen and (max-width: 1000px) {
+    .ligne {
+        flex-direction: column;
+        align-items: center;
+        gap: 4em;
+    }
+
+    #header-cv p, .expertise, .competence, .hobbies, .formation, .experience, .langues {
+        width: 70%;
+        margin: 0 15%;
+    }
+
+    .competence {
+        width: 80%;
+        margin: 0 10%;
+    }
+}
+
+@media screen and (max-width:636px) {
+   .cadre {
+    width: 350px;
+    height: 630px;
+    grid-template-columns: 350px;
+    grid-template-rows: 40% 12% 48%;
+    grid-template-areas: 
+    "portrait"
+    "projet"
+    "coordonnees"
+    "coordonnees";
+    justify-content: center;
+    background-color: transparent;
+    min-width: 350px;
+   } 
+
+   .joli-cadre {
+    width: 630px;
+    transform: rotate(90deg);
+    top: 22%;
+    left: -39.5%;
+   }
+
+   .portrait {
+    background-position: top;
+   }
+
+   .projet h2 {
+    font-size: 1.6em;
+    padding-top: 1em;
+    text-align: center;
+    margin-top: 0;
+   }
+
+   .coordonnees {
+    background-color: #0e2d69;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    margin: 0;
+   }
+
+   h1 {
+    font-size: 2.7em;
+    text-align: center;
+    padding-left: 0;
+   }
+
+   address {
+    padding-left: 0;
+   } 
+
+   .profil {
+    top: 95%;
+    left: 22%;
+   }
+
+   .expertise-ensemble {
+    flex-direction: column;
+    gap: 2em;
+   }
+
+   .cercle-expertise.crayon, 
+   .cercle-expertise.pinceau,
+   .pinceau + .petit-rond, 
+   .crayon + .petit-rond,
+   .expertise-detail .intitule
+    {
+        margin-left: 0;
+    }
+
+}
+
+
+
